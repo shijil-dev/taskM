@@ -2,10 +2,9 @@ const express = require("express")
 const mongoose = require("mongoose")
 const dotenv = require("dotenv").config()
 const app = express()
-const Task = require("./model/taskModel.js")
 const taskRoutes = require("./routes/taskRoutes.js")
 
-const PORT = "3000"
+const PORT = process.env.PORT
 
 //middleware
 /*const logger = (req, res, next) => {
