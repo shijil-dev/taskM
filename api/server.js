@@ -12,7 +12,7 @@ const PORT = process.env.PORT
   next()
 }*/
 app.use(express.json())
-app.use(taskRoutes)
+app.use("/api/tasks", taskRoutes)
 
 app.get("/", (req, res)=> {
 res.send("home page")
