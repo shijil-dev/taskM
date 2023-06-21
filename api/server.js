@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const dotenv = require("dotenv").config()
 const app = express()
 const taskRoutes = require("./routes/taskRoutes.js")
-
+const cors = require("cors")
 const PORT = process.env.PORT
 
 //middleware
@@ -12,6 +12,7 @@ const PORT = process.env.PORT
   next()
 }*/
 app.use(express.json())
+app.use(cors())
 app.use("/api/tasks", taskRoutes)
 
 app.get("/", (req, res)=> {

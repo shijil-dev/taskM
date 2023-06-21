@@ -1,8 +1,16 @@
-const TaskForm = () => {
+const TaskForm = ({createTask, name, handleInputChange, isEditing, updateTask}) => {
   return( 
-    <form>
-      <input name="name" placeholder="Add a Task"/>
-      <button>Add</button>
+    <form onSubmit={
+      (isEditing)?(updateTask):(createTask)
+    }>
+      <input 
+        type="text"
+        name="name"
+        placeholder="Add a Task"
+        value={name}
+        onChange={handleInputChange}
+      />
+      <button type="submit">{(isEditing)?<>Edit</>:<>Add</>}</button>
     </form>
   )
 }
