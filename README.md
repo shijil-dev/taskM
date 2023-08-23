@@ -1,3 +1,4 @@
 # taskM
-This is just a test project
-learning things
+This is a test project
+
+just learning things
