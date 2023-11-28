@@ -1,17 +1,21 @@
-const TaskForm = ({createTask, name, handleInputChange, isEditing, updateTask}) => {
-  return( 
-    <form onSubmit={
-      (isEditing)?(updateTask):(createTask)
-    }>
-      <input 
+const TaskForm = ({
+  createTask,
+  name,
+  handleInputChange,
+  isEditing,
+  updateTask,
+}) => {
+  return (
+    <form onSubmit={isEditing ? updateTask : createTask}>
+      <input
         type="text"
         name="name"
         placeholder="Add a Task"
         value={name}
         onChange={handleInputChange}
       />
-      <button type="submit">{(isEditing)?<>Edit</>:<>Add</>}</button>
+      <button type="submit">{isEditing ? <>Edit</> : <>Add</>}</button>
     </form>
-  )
-}
-export default TaskForm
+  );
+};
+export default TaskForm;
